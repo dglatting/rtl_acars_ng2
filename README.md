@@ -1,8 +1,8 @@
-rtl_acars_ng
+rtl_acars_ng2
 ============
 
-Simple console rtl_sdr ACARS decoder
-
+A variation of the: Simple console rtl_sdr ACARS decoder
+Dennis Glatting, July 2016
 
 ------------------------------------------------------------------------------
 
