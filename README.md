@@ -40,7 +40,7 @@ into this code. There were several changes:
 
  * Tighter parameter passing.
 
-I also const'ed things. The C++ versions I used where G++ 5.3.1 and
+I also const'ed things. The C++ versions I used were G++ 5.3.1 and
 6.1.0 under Ubuntu 16.04. I installed GCC 6.1.0 from source off the
 GCC git.
 
@@ -72,6 +72,11 @@ practical value. Further, looking at the data composing these failure
 conditions I am convinced some messages can be algorithmically
 recovered by other means however I am too lazy to implement something
 at this time.
+
+Under ideal conditions (i.e., my receive and transmit antennas inches 
+apart) I see roughly under 2% of the messages corrupt at periodic 
+transmit interval of three seconds. This indicates a problem 
+somewhere. 
 
 Also, it was somewhat amusing to watching the CPU load graph under two
 bit corrections. In other code I have written (e.g., my ADS-B GNURadio
