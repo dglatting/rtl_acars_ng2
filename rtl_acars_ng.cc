@@ -20,6 +20,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * $Log: rtl_acars_ng.cc,v $
+ * Revision 1.8  2016/07/07 04:50:21  dennisg
+ * I forgot to add constant print code under verbose.
+ *
  * Revision 1.7  2016/07/06 23:51:24  dennisg
  * Working. Check-in before loading on github.
  *
@@ -79,6 +82,7 @@
 #include <algorithm>
 #include <iomanip>
 #include <iostream>
+#include <map>
 #include <string>
 #include <vector>
 
@@ -371,7 +375,7 @@ static int atan_lut_coef = 8;
 static int debug_hop=0;
 static int current_freq = 0;
 
-static int verbose = 1;
+static int verbose = 0;
 
 struct fm_state
 {
@@ -432,7 +436,7 @@ static constexpr double twoPI  = ( M_PI * 2.0 );
 static constexpr double fourPI = ( M_PI * 4.0 );
 
 
-static const std::string my_ident = "$Id: rtl_acars_ng.cc,v 1.7 2016/07/06 23:51:24 dennisg Exp dennisg $";
+static const std::string my_ident = "$Id: rtl_acars_ng.cc,v 1.8 2016/07/07 04:50:21 dennisg Exp dennisg $";
 
 
 // Two routines to count the number of bit errors (i.e., the number of
@@ -2521,6 +2525,41 @@ main( int argc, char** argv ) {
     }
   }
 
+  // Print a bunch of constants. Useful when debugging.
+  
+  if( verbose ) {
+
+    static const
+      std::map<std::string, // The name of the constant
+	       int          // The constant's compile-time value
+	       > constantsInt = {
+      { "DEFAULT_SAMPLE_RATE",      DEFAULT_SAMPLE_RATE      },
+      { "DEFAULT_ASYNC_BUF_NUMBER", DEFAULT_ASYNC_BUF_NUMBER },
+      { "DEFAULT_BUF_LENGTH",       DEFAULT_BUF_LENGTH       },
+      { "MAXIMUM_OVERSAMPLE",       MAXIMUM_OVERSAMPLE       },
+      { "MAXIMUM_BUF_LENGTH",       MAXIMUM_BUF_LENGTH       },
+      { "AUTO_GAIN",                AUTO_GAIN                },
+      { "BUFFER_DUMP",              BUFFER_DUMP              },
+      { "FREQUENCIES_LIMIT",        FREQUENCIES_LIMIT        }
+    };
+    static const
+      std::map<std::string, float> constantsFloat = {
+      { "Fe",     Fe     },
+      { "Freqh",  Freqh  },
+      { "Freql",  Freql  },
+      { "BITLEN", BITLEN },
+      { "VFOPLL", VFOPLL },
+      { "BITPLL", BITPLL }
+    };
+
+    std::cout << "Program constants:" << std::endl;
+    for( const auto& i : constantsInt )
+      std::cout << "\t" << i.first << ": " << i.second <<std::endl;
+    for( const auto& i : constantsFloat )
+      std::cout << "\t" << i.first << ": " << i.second <<std::endl;
+    
+  }
+  
   /* quadruple sample_rate to limit to Δθ to ±π/2 */
   fm.sample_rate *= fm.post_downsample;
 
