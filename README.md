@@ -118,8 +118,8 @@ Final notes.
 
 * I have seen the pre-modified and post modified code lock up. This
   seems to be SDR related. Ctl-C doesn't cause the application to exit
-  and in those cases by disconnecting the SDR (i.e., pulling the USB
-  cable) order was restored.
+  and in those cases disconnecting the SDR restored order (i.e., pulling the USB
+  cable).
 
 * Part of my debugging process included graphing registers, such as
   csample. Although I printed the graphs I did not save them,
