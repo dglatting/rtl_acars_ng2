@@ -92,16 +92,19 @@ See:
    Networks.
 
    Koopman, Philip and Chakravarty, Tridib 
+   
    http://www.ece.cmu.edu/~koopman/roses/dsn04/koopman04_crc_poly_embedded.pdf
 
  * Investigating CRC Polynomials that Correct Burst Errors
 
    Travis Mandel, Jens Mache
+   
    http://homes.cs.washington.edu/~tmandel/papers/CRCBurst.pdf
 
  *  An Algorithm for Error Correcting Cyclic Redundance Checks
 
     McDaniel, Bill
+    
     http://www.drdobbs.com/an-algorithm-for-error-correcting-cyclic/184401662
 	    
 Fifth, I added a verbosity command line option.
@@ -139,9 +142,6 @@ Final notes.
 * This code was tested against my transmitter written under GNURadio
   and NOT live capture. That said, this code and the origional code
   was happy with my transmitted signal.
-
-
-Dennis Glatting, July 2016
 
 
 LocalWords:  GNURadio VOLK FFTW CRC printf const ACARS rtl acars ng
