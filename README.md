@@ -74,7 +74,7 @@ recovered by other means however I am too lazy to implement something
 at this time.
 
 Under ideal conditions (i.e., my receive and transmit antennas inches 
-apart) I see roughly under 2% of the messages corrupt at periodic 
+apart) I see roughly under 2% of the messages corrupt at a periodic 
 transmit interval of three seconds. This indicates a problem 
 somewhere. 
 
