@@ -362,4 +362,4 @@ X1	Service provider defined
 _ 	ACK	
 _*	ACK	
 _	ACK	
-¨ 	ACK	
+Â¨ 	ACK	
