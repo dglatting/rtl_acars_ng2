@@ -136,8 +136,7 @@ Final notes.
   was happy with my transmitted signal.
 
 
-Dennis Glatting
-July 2016
+Dennis Glatting, July 2016
 
 
 LocalWords:  GNURadio VOLK FFTW CRC printf const ACARS rtl acars ng
