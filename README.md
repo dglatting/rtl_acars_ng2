@@ -73,10 +73,14 @@ conditions I am convinced some messages can be algorithmically
 recovered by other means however I am too lazy to implement something
 at this time.
 
-Under ideal conditions (i.e., my receive and transmit antennas inches 
-apart) I see roughly under 2% of the messages corrupt at a periodic 
-transmit interval of three seconds. This indicates a problem 
-somewhere. 
+Under ideal conditions (i.e., my receive and transmit antennas inches
+apart) I see under 2% of the messages corrupt at a periodic transmit
+interval of three seconds. My hypothesis is the pthreads are too busy
+to service USB data but I am unsure how to prove it. I base my
+hypothesis on loading my two core laptop. For example, when I used
+OpenMP (i.e., under simplistic use cases), corruptions increased. When
+I ran the VOLK profile tool, corruptions increased. When I compiled
+GCC, nearly every message was corrupted.
 
 Also, it was somewhat amusing to watching the CPU load graph under two
 bit corrections. In other code I have written (e.g., my ADS-B GNURadio
@@ -126,8 +130,8 @@ Final notes.
 
 * I have seen the pre-modified and post modified code lock up. This
   seems to be SDR related. Ctl-C doesn't cause the application to exit
-  and in those cases disconnecting the SDR restored order (i.e., pulling the USB
-  cable).
+  and in those cases disconnecting the SDR restored order (i.e.,
+  pulling the USB cable).
 
 * Part of my debugging process included graphing registers, such as
   csample. Although I printed the graphs I did not save them,
@@ -145,4 +149,4 @@ Final notes.
 
 
 LocalWords:  GNURadio VOLK FFTW CRC printf const ACARS rtl acars ng
-LocalWords:  github SDR
+LocalWords:  github SDR pthreads OpenMP
